@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck1soydav6rfb"]
+
+[ext_resource type="Texture2D" uid="uid://dmg5fqio1ps2n" path="res://sprites/objects/chest_01.png" id="1_lfwwd"]
+[ext_resource type="Script" path="res://chest.gd" id="1_qysu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydjo6"]
+size = Vector2(16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwbb"]
+atlas = ExtResource("1_lfwwd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1pur"]
+atlas = ExtResource("1_lfwwd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldupl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwbb")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1pur")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Chest" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource("1_qysu6")
+
+[node name="actual_collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ydjo6")
+debug_color = Color(0.647059, 0.521569, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ldupl")
+animation = &"close"
+
+[node name="label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 159.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.223644, 0.223644)
+size_flags_horizontal = 4
+text = "asdasd"
+horizontal_alignment = 1
+vertical_alignment = 1

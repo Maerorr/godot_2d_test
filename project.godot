@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="2d_test"
+run/main_scene="res://root.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_2="interactions"
+
+[physics]
+
+common/physics_ticks_per_second=144
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
